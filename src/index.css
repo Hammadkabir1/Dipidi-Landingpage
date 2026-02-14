@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,700&family=UnifrakturMaguntia&family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=IM+Fell+English:ital@0;1&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Hide scrollbars */
+html,
+body {
+  overflow-x: hidden;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar,
+*::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+* {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+@layer base {
+  body {
+    font-family: 'IM Fell English', serif;
+  }
+}
+
+/* ========== NEWSPAPER LANDING PAGE STYLES ========== */
+
+/* Newspaper texture overlay - Using custom background image */
+.newspaper-bg {
+  background-image: url('/newspaper-bg.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: scroll;
+  background-repeat: repeat;
+  position: relative;
+}
+
+.newspaper-bg>* {
+  position: relative;
+  z-index: 2;
+}
+
+/* Add vintage text effect to ALL text in newspaper */
+.newspaper-bg,
+.newspaper-bg * {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Global ink bleed for newspaper text */
+.newspaper-bg h1,
+.newspaper-bg h2,
+.newspaper-bg h3,
+.newspaper-bg h4,
+.newspaper-bg h5,
+.newspaper-bg h6 {
+  text-shadow:
+    0.6px 0.6px 0.8px rgba(29, 26, 22, 0.5),
+    -0.2px -0.2px 0.5px rgba(29, 26, 22, 0.3);
+  filter: contrast(1.12) brightness(0.94);
+}
+
+.newspaper-bg p,
+.newspaper-bg span,
+.newspaper-bg div {
+  text-shadow: 0.3px 0.3px 0.6px rgba(29, 26, 22, 0.35);
+  filter: contrast(1.08) brightness(0.96);
+}
+
+/* Ink bleed text effect - ENHANCED */
+.ink-bleed {
+  text-shadow:
+    0.5px 0.5px 1px rgba(29, 26, 22, 0.7),
+    -0.3px -0.3px 0.8px rgba(29, 26, 22, 0.4);
+  filter: contrast(1.15) brightness(0.95);
+}
+
+/* Heavy ink effect for headlines - STRONGER */
+.ink-heavy {
+  text-shadow:
+    0.8px 0.8px 1px rgba(29, 26, 22, 0.8),
+    -0.4px 0px 1px rgba(29, 26, 22, 0.5),
+    0px 0.5px 1.5px rgba(29, 26, 22, 0.3);
+  filter: contrast(1.2) brightness(0.92);
+}
+
+/* Halftone image filter */
+.halftone {
+  filter: grayscale(100%) contrast(1.2);
+  position: relative;
+}
+
+.halftone::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, #1d1a16 1px, transparent 1px);
+  background-size: 4px 4px;
+  mix-blend-mode: multiply;
+  opacity: 0.15;
+}
+
+/* Double line border */
+.double-line {
+  border-top: 3px double #1d1a16;
+  border-bottom: 3px double #1d1a16;
+  padding: 4px 0;
+}
+
+/* Thick rule */
+.thick-rule {
+  border: none;
+  height: 3px;
+  background: #1d1a16;
+}
+
+/* Thin rule */
+.thin-rule {
+  border: none;
+  height: 1px;
+  background: #665341;
+}
+
+/* Font families with vintage printing effects */
+.font-blackletter {
+  font-family: 'UnifrakturMaguntia', cursive;
+  text-shadow: 0.8px 0.8px 1px rgba(29, 26, 22, 0.6);
+  filter: contrast(1.15) brightness(0.93);
+}
+
+.font-headline {
+  font-family: 'Playfair Display', serif;
+  text-shadow:
+    0.7px 0.7px 0.9px rgba(29, 26, 22, 0.55),
+    -0.3px 0px 0.6px rgba(29, 26, 22, 0.35);
+  filter: contrast(1.12) brightness(0.94);
+}
+
+.font-body {
+  font-family: 'IM Fell English', serif;
+  text-shadow: 0.4px 0.4px 0.7px rgba(29, 26, 22, 0.4);
+  filter: contrast(1.1) brightness(0.95);
+  letter-spacing: 0.01em;
+}
+
+.font-typewriter {
+  font-family: 'Courier Prime', monospace;
+  text-shadow: 0.5px 0.5px 0.8px rgba(29, 26, 22, 0.45);
+  filter: contrast(1.11) brightness(0.94);
+}
