@@ -7,11 +7,11 @@ const HeroSection = () => {
     <section className="max-w-full mx-auto px-2 sm:px-4 pt-3 sm:pt-4 pb-2">
       {/* Main headline - directly on newspaper background */}
       <h2 className="font-headline text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-black text-ink ink-heavy leading-[0.95] tracking-tight uppercase mb-2 text-center" style={{ wordSpacing: '0.3em' }}>
-        Time for a Social Revolution.
+        The World’s First Social Operating System for Real Life.
       </h2>
 
       <p className="font-body text-base sm:text-xl md:text-2xl lg:text-3xl font-normal text-ink ink-bleed mb-3 sm:mb-4 max-w-full mx-auto text-center px-2" style={{ wordSpacing: '0.3em' }}>
-        Not just another app. A system that gets you back into <span className="font-headline font-black">real life.</span>
+        TIME FOR A SOCIAL <span className="italic">REVOLUTION.</span>
       </p>
 
       <hr className="thin-rule mb-3 sm:mb-4" />

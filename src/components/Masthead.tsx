@@ -12,7 +12,7 @@ const Masthead = () => {
           <div className="w-full">
             <p className="font-typewriter text-[0.65rem] sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl tracking-tight sm:tracking-widest uppercase text-ink font-black leading-tight">
               <span className="block sm:inline">VOL. 001</span>
-              <span className="block sm:inline text-[0.5rem] sm:text-xs md:text-sm lg:text-base xl:text-lg"> - social organizer</span>
+              <span className="block sm:inline text-[0.5rem] sm:text-xs md:text-sm lg:text-base xl:text-lg"> - social operator</span>
             </p>
           </div>
           <hr className="border-t-2 border-ink w-full mt-1" />
@@ -30,8 +30,8 @@ const Masthead = () => {
           <hr className="border-t-2 border-ink w-full mb-1" />
           <div className="w-full">
             <p className="font-typewriter text-[0.65rem] sm:text-sm md:text-base lg:text-lg xl:text-xl tracking-tight sm:tracking-widest uppercase text-ink font-black leading-tight text-right">
-              <span className="hidden md:inline whitespace-nowrap">iOS & Android Apps Coming Soon!</span>
-              <span className="md:hidden">iOS Apps Coming Soon!</span>
+              <span className="hidden md:inline whitespace-nowrap">iOS & Android Apps Coming Soon</span>
+              <span className="md:hidden">iOS Apps Coming Soon</span>
             </p>
           </div>
           <hr className="border-t-2 border-ink w-full mt-1" />
@@ -51,7 +51,7 @@ const Masthead = () => {
         <div className="flex items-center justify-between gap-0.5 sm:gap-2 md:gap-4">
           {/* Left date */}
           <span className="font-typewriter text-[0.6rem] sm:text-sm md:text-base lg:text-lg tracking-tight sm:tracking-wider uppercase text-ink font-bold whitespace-nowrap">
-            April 06, 2024
+            Feb 14, 2026
           </span>
 
           {/* Center heading with stars */}
@@ -61,7 +61,7 @@ const Masthead = () => {
 
           {/* Right date */}
           <span className="font-typewriter text-[0.6rem] sm:text-sm md:text-base lg:text-lg tracking-tight sm:tracking-wider uppercase text-ink font-bold whitespace-nowrap">
-            Walk Riddle, 2024
+            Gen Z, 2026
           </span>
         </div>
       </div>

@@ -135,10 +135,10 @@ const HeadlineContent = ({ headline }: { headline: Headline }) => {
           <hr className="border-t-2 border-ink" />
           <div className="absolute top-0 left-0 right-0 flex justify-between items-center px-1 sm:px-2" style={{ transform: 'translateY(-70%)' }}>
             <span className="px-1 sm:px-2 font-typewriter text-[0.55rem] sm:text-xs md:text-sm text-ink font-bold">
-              TORONTO STAR:1919
+              
             </span>
             <span className="px-1 sm:px-2 font-typewriter text-[0.55rem] sm:text-xs md:text-sm text-ink font-bold">
-              - BY DIPID
+              
             </span>
           </div>
         </div>

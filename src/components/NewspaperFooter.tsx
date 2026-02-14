@@ -25,13 +25,10 @@ const NewspaperFooter = () => {
         {/* Text content */}
         <div className="text-center mb-3 sm:mb-4">
           <p className="font-body text-base sm:text-lg md:text-xl lg:text-2xl text-ink font-bold mb-1 sm:mb-2 px-1">
-            They optimized for addiction.
-          </p>
-          <p className="font-body text-base sm:text-lg md:text-xl lg:text-2xl text-ink font-bold mb-1 sm:mb-2 px-1">
-            We're optimizing for presence.
+            <span className="font-black text-xl sm:text-2xl md:text-3xl lg:text-4xl">They</span> optimized for addiction.
           </p>
           <p className="font-body text-base sm:text-lg md:text-xl lg:text-2xl text-ink font-bold mb-3 sm:mb-4 px-1">
-            The shift starts with us.
+            <span className="font-black text-base text-xl sm:text-2xl md:text-3xl lg:text-4xl">We're</span> optimizing for presence.
           </p>
         </div>
 
@@ -45,10 +42,17 @@ const NewspaperFooter = () => {
         </div>
 
         {/* Submit button */}
-        <div className="text-center">
+        <div className="text-center mb-2 sm:mb-3">
           <button className="font-headline text-sm sm:text-base md:text-lg lg:text-xl font-bold text-paper bg-ink border-l-2 border-r-2 border-ink px-6 sm:px-8 py-2 sm:py-3 uppercase tracking-wider sm:tracking-widest transition-all duration-300 hover:bg-paper hover:text-ink hover:scale-105 w-full sm:w-auto">
             Join Rebellion
           </button>
+        </div>
+
+        {/* Text below button */}
+        <div className="text-center">
+          <p className="font-body text-base sm:text-lg md:text-xl lg:text-2xl text-ink font-bold px-1">
+            The shift starts with us.
+          </p>
         </div>
       </div>
     </footer>
