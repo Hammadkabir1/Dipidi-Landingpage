@@ -1,16 +1,16 @@
 const WayOutSection = () => {
   const cards = [
     {
-      title: "Learns Your Circle",
-      description: "Understands you and your existing friends — preferences, budgets, energy levels, and who fits where.",
+      title: "Know Your Circle. ",
+      description: "Dipidi continuously learns your circle’s preferences, budgets, and rhythms and builds plans that fit effortlessly into real life. So plans feels easy, not complicated.",
     },
     {
-      title: "Integrates New People Seamlessly",
-      description: "Helps new connections find their place within your current circles so relationships don't fade.",
+      title: "Grow Your Circle ",
+      description: "Whether you meet someone on your own or Dipidi brings you together, we help them find their place in your life.Otherwise, they stay “that person you met once.”",
     },
     {
-      title: "Turns Intent Into Real Plans",
-      description: "Transforms 'we should hang' into structured, recurring real-world gatherings.",
+      title: "Protect Your Circle",
+      description: "Dipidi monitors mood shifts and silence. When you go quiet, we nudge your circle to reach out, ensuring you get the most important call: the one you didn't ask for.",
     },
   ];
 
@@ -26,7 +26,7 @@ const WayOutSection = () => {
       </div>
 
       <p className="font-body text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl text-ink ink-bleed text-center mb-4 sm:mb-6 px-2" style={{ wordSpacing: '0.2em' }}>
-        They want your attention. We want your presence
+        They want your attention. We want your presence.
       </p>
 
       {/* Three cards with brighter background */}
@@ -45,7 +45,7 @@ const WayOutSection = () => {
                 clipPath: 'polygon(0.3% 0.8%, 1.5% 0.2%, 3% 0.6%, 5% 0.3%, 8% 0.7%, 12% 0.4%, 15% 0.8%, 20% 0.5%, 25% 0.7%, 30% 0.3%, 35% 0.6%, 40% 0.4%, 45% 0.7%, 50% 0.3%, 55% 0.6%, 60% 0.4%, 65% 0.7%, 70% 0.5%, 75% 0.8%, 80% 0.4%, 85% 0.6%, 90% 0.5%, 93% 0.7%, 96% 0.4%, 98.5% 0.6%, 99.7% 0.3%, 99.8% 5%, 99.6% 10%, 99.9% 15%, 99.5% 20%, 99.8% 25%, 99.4% 30%, 99.7% 35%, 99.5% 40%, 99.8% 45%, 99.6% 50%, 99.7% 55%, 99.5% 60%, 99.8% 65%, 99.4% 70%, 99.7% 75%, 99.5% 80%, 99.8% 85%, 99.6% 90%, 99.7% 93%, 99.5% 96%, 99.8% 98.5%, 99.4% 99.7%, 98.5% 99.6%, 96% 99.8%, 93% 99.5%, 90% 99.7%, 85% 99.4%, 80% 99.6%, 75% 99.5%, 70% 99.8%, 65% 99.4%, 60% 99.7%, 55% 99.5%, 50% 99.8%, 45% 99.4%, 40% 99.6%, 35% 99.5%, 30% 99.8%, 25% 99.4%, 20% 99.7%, 15% 99.5%, 12% 99.8%, 8% 99.4%, 5% 99.6%, 3% 99.5%, 1.5% 99.8%, 0.3% 99.4%, 0.2% 98.5%, 0.5% 96%, 0.3% 93%, 0.6% 90%, 0.4% 85%, 0.7% 80%, 0.5% 75%, 0.8% 70%, 0.4% 65%, 0.6% 60%, 0.5% 55%, 0.7% 50%, 0.4% 45%, 0.6% 40%, 0.5% 35%, 0.7% 30%, 0.4% 25%, 0.6% 20%, 0.5% 15%, 0.7% 10%, 0.4% 5%)'
               }}
             >
-              <h4 className="font-headline text-lg sm:text-xl md:text-xl lg:text-2xl xl:text-3xl font-bold text-ink mb-2 sm:mb-3 text-center">
+              <h4 className="font-headline text-xl sm:text-2xl md:text-2xl lg:text-3xl xl:text-4xl font-bold text-ink mb-2 sm:mb-3 text-center">
                 {card.title}
               </h4>
               <p className="font-body text-base sm:text-lg md:text-lg lg:text-xl text-ink ink-bleed text-center leading-relaxed">

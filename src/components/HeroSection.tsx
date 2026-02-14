@@ -53,7 +53,7 @@ const HeroSection = () => {
             </button>
           </div>
           <p className="font-body text-sm sm:text-base md:text-lg lg:text-xl text-ink ink-bleed mt-2 text-center px-1">
-            It's time to put down the phone and <span className="font-bold">show up.</span>
+            More presence.  <span className="font-bold">Less noise !</span>
           </p>
         </div>
         </div>
