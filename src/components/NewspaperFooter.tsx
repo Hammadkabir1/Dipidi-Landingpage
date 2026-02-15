@@ -38,9 +38,8 @@ const NewspaperFooter = () => {
     <footer className="w-full flex flex-col items-center justify-center">
       {/* Email signup section with footer background */}
       <div
-        className="w-full px-2 sm:px-4 py-8 sm:py-10 md:py-12 mt-6 sm:mt-8 min-h-[350px] sm:min-h-[400px] flex items-center justify-center"
+        className="w-full px-2 sm:px-4 py-8 sm:py-10 md:py-12 mt-6 sm:mt-8 min-h-[350px] sm:min-h-[400px] flex items-center justify-center footer-bg"
         style={{
-          backgroundImage: 'url(/footer-bg.webp)',
           backgroundSize: 'cover',
           backgroundPosition: 'top center',
           backgroundAttachment: 'scroll',

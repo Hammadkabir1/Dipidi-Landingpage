@@ -43,6 +43,18 @@ body::-webkit-scrollbar,
   position: relative;
 }
 
+/* Footer background - Mobile optimized */
+.footer-bg {
+  background-image: url('/footer-bg-mobile.webp');
+}
+
+/* Desktop gets higher quality version */
+@media (min-width: 768px) {
+  .footer-bg {
+    background-image: url('/footer-bg.webp');
+  }
+}
+
 .newspaper-bg>* {
   position: relative;
   z-index: 2;
@@ -156,4 +168,25 @@ body::-webkit-scrollbar,
   font-family: 'Courier Prime', monospace;
   text-shadow: 0.5px 0.5px 0.8px rgba(29, 26, 22, 0.45);
   filter: contrast(1.11) brightness(0.94);
+}
+
+/* Mobile Performance Optimizations */
+@media (max-width: 768px) {
+  /* Improve scrolling performance on mobile */
+  section {
+    content-visibility: auto;
+    contain-intrinsic-size: auto 500px;
+  }
+
+  /* Reduce animations on mobile */
+  * {
+    animation-duration: 0.5s !important;
+    transition-duration: 0.2s !important;
+  }
+
+  /* Optimize background rendering */
+  .newspaper-bg {
+    background-attachment: scroll !important;
+    will-change: auto;
+  }
 }
