@@ -19,11 +19,13 @@ export interface EmailSubmissionData {
 }
 
 export async function submitEmail(data: EmailSubmissionData): Promise<{ success: boolean; error?: string }> {
-  // Get your email address from environment variable
+  // Get your email addresses from environment variables
   const YOUR_EMAIL = import.meta.env.VITE_EMAIL_RECEIVER;
+  const CC_EMAIL = import.meta.env.VITE_EMAIL_CC;
 
   console.log('🔍 DEBUG - Email receiver configured:', YOUR_EMAIL ? 'YES' : 'NO');
   console.log('🔍 DEBUG - Receiver email:', YOUR_EMAIL);
+  console.log('🔍 DEBUG - CC email:', CC_EMAIL || 'Not set');
   console.log('🔍 DEBUG - User email to submit:', data.email);
 
   if (!YOUR_EMAIL) {
@@ -43,6 +45,12 @@ export async function submitEmail(data: EmailSubmissionData): Promise<{ success:
     formData.append('_captcha', 'false');
     formData.append('_next', window.location.href); // Return to same page
     formData.append('source', data.source || 'footer-signup');
+
+    // Add CC email if configured
+    if (CC_EMAIL) {
+      formData.append('_cc', CC_EMAIL);
+      console.log('📧 CC will be sent to:', CC_EMAIL);
+    }
 
     const response = await fetch(`https://formsubmit.co/ajax/${YOUR_EMAIL}`, {
       method: 'POST',
