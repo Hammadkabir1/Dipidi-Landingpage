@@ -1,4 +1,18 @@
 const Masthead = () => {
+  // Get current date in "MMM DD, YYYY" format
+  const getCurrentDate = () => {
+    const date = new Date();
+    const options: Intl.DateTimeFormatOptions = {
+      month: 'short',
+      day: 'numeric',
+      year: 'numeric'
+    };
+    return date.toLocaleDateString('en-US', options);
+  };
+
+  const currentDate = getCurrentDate();
+  const currentYear = new Date().getFullYear();
+
   return (
     <header className="text-center py-4 sm:py-6 px-2 sm:px-4 border-b-2 border-ink">
       {/* Top FULL WIDTH divider line */}
@@ -48,7 +62,7 @@ const Masthead = () => {
         <div className="flex items-center justify-between gap-0.5 sm:gap-2 md:gap-4">
           {/* Left date */}
           <span className="font-typewriter text-[0.6rem] sm:text-sm md:text-base lg:text-lg tracking-tight sm:tracking-wider uppercase text-ink font-bold whitespace-nowrap">
-            Feb 14, 2026
+            {currentDate}
           </span>
 
           {/* Center heading with stars */}
@@ -58,7 +72,7 @@ const Masthead = () => {
 
           {/* Right date */}
           <span className="font-typewriter text-[0.6rem] sm:text-sm md:text-base lg:text-lg tracking-tight sm:tracking-wider uppercase text-ink font-bold whitespace-nowrap">
-            Gen Z, 2026
+            Gen Z, {currentYear}
           </span>
         </div>
       </div>
