@@ -1,37 +1,16 @@
 /**
- * Email submission utility for Google Sheets integration
+ * Email submission utility using Formsubmit.co
  *
- * SETUP INSTRUCTIONS:
- * 1. Create a new Google Sheet
- * 2. Go to Extensions > Apps Script
- * 3. Paste the following code in Code.gs:
+ * SETUP (30 seconds):
+ * 1. Open .env file
+ * 2. Set VITE_EMAIL_RECEIVER to your email address
+ * 3. That's it! Emails will be sent to your inbox
  *
- * function doPost(e) {
- *   var sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
- *   var data = JSON.parse(e.postData.contents);
- *
- *   // Add headers if sheet is empty
- *   if (sheet.getLastRow() === 0) {
- *     sheet.appendRow(['Timestamp', 'Email', 'Source']);
- *   }
- *
- *   // Add the data
- *   sheet.appendRow([
- *     new Date(),
- *     data.email,
- *     data.source || 'landing-page'
- *   ]);
- *
- *   return ContentService
- *     .createTextOutput(JSON.stringify({ success: true }))
- *     .setMimeType(ContentService.MimeType.JSON);
- * }
- *
- * 4. Deploy > New deployment
- * 5. Type: Web app
- * 6. Execute as: Me
- * 7. Who has access: Anyone
- * 8. Copy the Web App URL and paste it in the .env file as VITE_GOOGLE_SHEETS_URL
+ * Features:
+ * - 100% Free & Unlimited
+ * - No signup required
+ * - Emails sent directly to your inbox
+ * - Spam protection included
  */
 
 export interface EmailSubmissionData {
@@ -40,28 +19,37 @@ export interface EmailSubmissionData {
 }
 
 export async function submitEmail(data: EmailSubmissionData): Promise<{ success: boolean; error?: string }> {
-  // Get the Google Sheets web app URL from environment variable
-  const SHEETS_URL = import.meta.env.VITE_GOOGLE_SHEETS_URL;
+  // Get your email address from environment variable
+  const YOUR_EMAIL = import.meta.env.VITE_EMAIL_RECEIVER;
 
-  if (!SHEETS_URL) {
-    console.error('Google Sheets URL not configured. Please set VITE_GOOGLE_SHEETS_URL in .env file');
+  if (!YOUR_EMAIL) {
+    console.error('Email receiver not configured. Please set VITE_EMAIL_RECEIVER in .env file');
     // For development, just log the email
     console.log('Email submission (dev mode):', data);
     return { success: true };
   }
 
   try {
-    const response = await fetch(SHEETS_URL, {
+    const formData = new FormData();
+    formData.append('email', data.email);
+    formData.append('_subject', 'New Dipidi Waitlist Signup!');
+    formData.append('_template', 'table');
+    formData.append('_captcha', 'false');
+    formData.append('source', data.source || 'footer-signup');
+
+    const response = await fetch(`https://formsubmit.co/${YOUR_EMAIL}`, {
       method: 'POST',
-      mode: 'no-cors', // Google Apps Script requires no-cors
+      body: formData,
       headers: {
-        'Content-Type': 'application/json',
+        'Accept': 'application/json',
       },
-      body: JSON.stringify(data),
     });
 
-    // Note: With no-cors, we can't read the response, so we assume success if no error is thrown
-    return { success: true };
+    if (response.ok) {
+      return { success: true };
+    } else {
+      return { success: false, error: 'Failed to submit email' };
+    }
   } catch (error) {
     console.error('Error submitting email:', error);
     return {

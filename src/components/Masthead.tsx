@@ -10,8 +10,8 @@ const Masthead = () => {
         <div className="flex-1 text-left flex flex-col items-start min-w-0">
           <hr className="border-t-2 border-ink w-full mb-1" />
           <div className="w-full">
-            <p className="font-typewriter text-[0.65rem] sm:text-sm md:text-base lg:text-lg xl:text-xl tracking-tight sm:tracking-widest uppercase text-ink font-black leading-tight whitespace-nowrap">
-              VOL. 001 - SOCIAL OPERATOR
+            <p className="font-typewriter text-[0.65rem] sm:text-sm md:text-base lg:text-lg xl:text-xl tracking-tight sm:tracking-widest uppercase text-ink font-black leading-tight md:whitespace-nowrap">
+              VOL. 001 - <span className="sm:inline block">SOCIAL OPERATOR</span>
             </p>
           </div>
           <hr className="border-t-2 border-ink w-full mt-1" />
