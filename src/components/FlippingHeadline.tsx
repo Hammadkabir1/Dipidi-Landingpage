@@ -24,7 +24,7 @@ const headlines: Headline[] = [
     subtitle2: "of pseudo-intimacy",
     isCustomLayout: true,
     link: "https://pmc.ncbi.nlm.nih.gov/articles/PMC12488433/",
-    customText: "Are we trading authenticity for algorithmic affection?"
+    
   },
   {
     title: "Forbes",
@@ -39,7 +39,7 @@ const headlines: Headline[] = [
     subtitle2: "Emotional Attachment in Human-AI Relationships",
     isCustomLayout: true,
     link: "https://scale.stanford.edu/ai/repository/illusions-intimacy-emotional-attachment-and-emerging-psychological-risks-human-ai",
-    customText: "Emerging Psychological Risks in Human-AI Relationships"
+    
   },
   {
     title: "Square Space",
@@ -68,7 +68,7 @@ const headlines: Headline[] = [
     subtitle2: "is by design",
     isCustomLayout: true,
     link: "https://www.ucsf.edu/news/2026/01/431366/psychiatrists-hope-chat-logs-can-reveal-secrets-ai-psychosis",
-    customText: "Aimed at boosting engagement"
+    
   },
   {
     title: "The Guardian",
@@ -76,7 +76,7 @@ const headlines: Headline[] = [
     subtitle2: "a signal we're lacking something for survival",
     isCustomLayout: true,
     link: "https://www.theguardian.com/lifeandstyle/2024/jan/29/us-surgeon-general-vivek-murthy-loneliness-mental-health-epidemic-social-media",
-    customText: "US surgeon general Vivek Murthy"
+    
   },
   {
     title: "USA Today",

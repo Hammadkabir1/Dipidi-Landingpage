@@ -1,7 +1,12 @@
-import heroImage from "@/assets/hero-rebellion.png";
 import FlippingHeadline from "@/components/FlippingHeadline";
+import OptimizedImage from "@/components/OptimizedImage";
 
 const HeroSection = () => {
+  const scrollToFooter = () => {
+    const footer = document.querySelector('footer');
+    footer?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
+
   return (
     <section className="max-w-full mx-auto px-2 sm:px-4 pt-3 sm:pt-4 pb-2">
       {/* Main headline - directly on newspaper background */}
@@ -34,16 +39,12 @@ const HeroSection = () => {
           clipPath: 'polygon(0.3% 0.8%, 1.5% 0.2%, 3% 0.6%, 5% 0.3%, 8% 0.7%, 12% 0.4%, 15% 0.8%, 20% 0.5%, 25% 0.7%, 30% 0.3%, 35% 0.6%, 40% 0.4%, 45% 0.7%, 50% 0.3%, 55% 0.6%, 60% 0.4%, 65% 0.7%, 70% 0.5%, 75% 0.8%, 80% 0.4%, 85% 0.6%, 90% 0.5%, 93% 0.7%, 96% 0.4%, 98.5% 0.6%, 99.7% 0.3%, 99.8% 5%, 99.6% 10%, 99.9% 15%, 99.5% 20%, 99.8% 25%, 99.4% 30%, 99.7% 35%, 99.5% 40%, 99.8% 45%, 99.6% 50%, 99.7% 55%, 99.5% 60%, 99.8% 65%, 99.4% 70%, 99.7% 75%, 99.5% 80%, 99.8% 85%, 99.6% 90%, 99.7% 93%, 99.5% 96%, 99.8% 98.5%, 99.4% 99.7%, 98.5% 99.6%, 96% 99.8%, 93% 99.5%, 90% 99.7%, 85% 99.4%, 80% 99.6%, 75% 99.5%, 70% 99.8%, 65% 99.4%, 60% 99.7%, 55% 99.5%, 50% 99.8%, 45% 99.4%, 40% 99.6%, 35% 99.5%, 30% 99.8%, 25% 99.4%, 20% 99.7%, 15% 99.5%, 12% 99.8%, 8% 99.4%, 5% 99.6%, 3% 99.5%, 1.5% 99.8%, 0.3% 99.4%, 0.2% 98.5%, 0.5% 96%, 0.3% 93%, 0.6% 90%, 0.4% 85%, 0.7% 80%, 0.5% 75%, 0.8% 70%, 0.4% 65%, 0.6% 60%, 0.5% 55%, 0.7% 50%, 0.4% 45%, 0.6% 40%, 0.5% 35%, 0.7% 30%, 0.4% 25%, 0.6% 20%, 0.5% 15%, 0.7% 10%, 0.4% 5%)'
         }}>
           <div className="relative overflow-hidden">
-            <div className="halftone">
-              <img
-                src={heroImage}
-                alt="We Want You For Dipidi"
-                className="w-full aspect-video object-cover"
-                style={{
-                  filter: 'grayscale(100%) contrast(1.1) brightness(0.95)'
-                }}
-              />
-            </div>
+            <OptimizedImage
+              src="/hero-rebellion.webp"
+              alt="We Want You For Dipidi"
+              className="w-full aspect-video object-cover"
+              eager
+            />
           </div>
           <p className="font-body text-sm sm:text-base md:text-lg lg:text-xl text-ink ink-bleed mt-2 text-center px-1">
             More presence.  <span className="font-bold">Less noise !</span>
@@ -51,8 +52,10 @@ const HeroSection = () => {
 
           {/* Join Our Rebellion Button */}
           <div className="mt-3 sm:mt-4">
-            <button className="font-headline text-sm sm:text-base md:text-lg lg:text-xl font-bold text-paper bg-ink border-l-2 border-r-2 border-ink px-6 sm:px-8 py-2 sm:py-3 uppercase tracking-wider sm:tracking-widest transition-all duration-300 hover:bg-paper hover:text-ink hover:scale-105 w-full">
-              Join Our Rebellion
+            <button
+              onClick={scrollToFooter}
+              className="font-headline text-sm sm:text-base md:text-lg lg:text-xl font-bold text-paper bg-ink border-l-2 border-r-2 border-ink px-6 sm:px-8 py-2 sm:py-3 uppercase tracking-wider sm:tracking-widest transition-all duration-300 hover:bg-paper hover:text-ink hover:scale-105 w-full cursor-pointer">
+              Join Rebellion For Early Access
             </button>
           </div>
         </div>

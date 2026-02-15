@@ -1,3 +1,5 @@
+import OptimizedImage from "@/components/OptimizedImage";
+
 const RevolutionHeroSection = () => {
   return (
     <section className="max-w-full mx-auto px-2 sm:px-3 md:px-5 py-3 sm:py-4 md:py-6">
@@ -10,8 +12,8 @@ const RevolutionHeroSection = () => {
         }}
       >
         {/* IMAGE FILLS ENTIRE RECTANGLE - Background */}
-        <img
-          src="/revolution-hero.png"
+        <OptimizedImage
+          src="/revolution-hero.webp"
           alt="Break the Black Mirror - Join the Revolution"
           className="absolute inset-0 w-full h-full object-cover"
           style={{

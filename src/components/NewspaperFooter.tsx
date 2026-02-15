@@ -1,11 +1,46 @@
+import { useState, FormEvent } from 'react';
+import { submitEmail } from '@/utils/emailSubmission';
+
 const NewspaperFooter = () => {
+  const [email, setEmail] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+  const [errorMessage, setErrorMessage] = useState('');
+
+  const handleSubmit = async (e: FormEvent) => {
+    e.preventDefault();
+
+    if (!email || !email.includes('@')) {
+      setSubmitStatus('error');
+      setErrorMessage('Please enter a valid email address');
+      return;
+    }
+
+    setIsSubmitting(true);
+    setSubmitStatus('idle');
+
+    const result = await submitEmail({ email, source: 'footer-signup' });
+
+    setIsSubmitting(false);
+
+    if (result.success) {
+      setSubmitStatus('success');
+      setEmail('');
+      // Reset success message after 5 seconds
+      setTimeout(() => setSubmitStatus('idle'), 5000);
+    } else {
+      setSubmitStatus('error');
+      setErrorMessage(result.error || 'Failed to submit. Please try again.');
+    }
+  };
+
   return (
     <footer className="w-full flex flex-col items-center justify-center">
       {/* Email signup section with footer background */}
       <div
         className="w-full px-2 sm:px-4 py-8 sm:py-10 md:py-12 mt-6 sm:mt-8 min-h-[350px] sm:min-h-[400px] flex items-center justify-center"
         style={{
-          backgroundImage: 'url(/footer-bg.jpg)',
+          backgroundImage: 'url(/footer-bg.webp)',
           backgroundSize: 'cover',
           backgroundPosition: 'top center',
           backgroundAttachment: 'scroll',
@@ -34,21 +69,42 @@ const NewspaperFooter = () => {
           </p>
         </div>
 
-        {/* Email input */}
-        <div className="mb-2 sm:mb-3">
-          <input
-            type="email"
-            placeholder="Join the waitlist for early access"
-            className="w-full px-3 sm:px-4 py-2 sm:py-3 border-2 border-ink bg-paper font-body text-sm sm:text-base md:text-lg text-ink placeholder-ink/60 focus:outline-none focus:border-ink focus:ring-2 focus:ring-ink/20"
-          />
-        </div>
+        <form onSubmit={handleSubmit} className="w-full">
+          {/* Email input */}
+          <div className="mb-2 sm:mb-3">
+            <input
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder="Join the waitlist for early access"
+              disabled={isSubmitting}
+              className="w-full px-3 sm:px-4 py-2 sm:py-3 border-2 border-ink bg-paper font-body text-sm sm:text-base md:text-lg text-ink placeholder-ink/60 focus:outline-none focus:border-ink focus:ring-2 focus:ring-ink/20 disabled:opacity-50"
+              required
+            />
+          </div>
 
-        {/* Submit button */}
-        <div className="text-center mb-2 sm:mb-3">
-          <button className="font-headline text-sm sm:text-base md:text-lg lg:text-xl font-bold text-paper bg-ink border-l-2 border-r-2 border-ink px-6 sm:px-8 py-2 sm:py-3 uppercase tracking-wider sm:tracking-widest transition-all duration-300 hover:bg-paper hover:text-ink hover:scale-105 w-full sm:w-auto">
-            Join Rebellion
-          </button>
-        </div>
+          {/* Status Messages */}
+          {submitStatus === 'success' && (
+            <div className="mb-2 sm:mb-3 p-2 bg-green-100 border border-green-600 text-green-800 font-body text-sm sm:text-base text-center">
+              ✓ Success! You're on the waitlist.
+            </div>
+          )}
+          {submitStatus === 'error' && (
+            <div className="mb-2 sm:mb-3 p-2 bg-red-100 border border-red-600 text-red-800 font-body text-sm sm:text-base text-center">
+              {errorMessage}
+            </div>
+          )}
+
+          {/* Submit button */}
+          <div className="text-center mb-2 sm:mb-3">
+            <button
+              type="submit"
+              disabled={isSubmitting}
+              className="font-headline text-sm sm:text-base md:text-lg lg:text-xl font-bold text-paper bg-ink border-l-2 border-r-2 border-ink px-6 sm:px-8 py-2 sm:py-3 uppercase tracking-wider sm:tracking-widest transition-all duration-300 hover:bg-paper hover:text-ink hover:scale-105 w-full sm:w-auto disabled:opacity-50 disabled:cursor-not-allowed">
+              {isSubmitting ? 'Submitting...' : 'Join Rebellion'}
+            </button>
+          </div>
+        </form>
 
         {/* Text below button */}
         <div className="text-center">

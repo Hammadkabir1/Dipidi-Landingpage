@@ -35,7 +35,7 @@ body::-webkit-scrollbar,
 
 /* Newspaper texture overlay - Using custom background image */
 .newspaper-bg {
-  background-image: url('/newspaper-bg.png');
+  background-image: url('/newspaper-bg.webp');
   background-size: cover;
   background-position: center;
   background-attachment: scroll;
