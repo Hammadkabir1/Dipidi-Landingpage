@@ -1,5 +1,4 @@
-import heroImage from "@/assets/hero-friends.jpg";
-import { Play } from "lucide-react";
+import heroImage from "@/assets/hero-rebellion.png";
 import FlippingHeadline from "@/components/FlippingHeadline";
 
 const HeroSection = () => {
@@ -38,23 +37,24 @@ const HeroSection = () => {
             <div className="halftone">
               <img
                 src={heroImage}
-                alt="Friends gathering together at a table"
+                alt="We Want You For Dipidi"
                 className="w-full aspect-video object-cover"
                 style={{
                   filter: 'grayscale(100%) contrast(1.1) brightness(0.95)'
                 }}
               />
             </div>
-            {/* Play button overlay */}
-            <button className="absolute inset-0 flex items-center justify-center group">
-              <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full border-[3px] border-ink bg-paper/30 backdrop-blur-sm flex items-center justify-center transition-transform group-hover:scale-110">
-                <Play className="w-7 h-7 sm:w-9 sm:h-9 text-ink fill-ink ml-1" />
-              </div>
-            </button>
           </div>
           <p className="font-body text-sm sm:text-base md:text-lg lg:text-xl text-ink ink-bleed mt-2 text-center px-1">
             More presence.  <span className="font-bold">Less noise !</span>
           </p>
+
+          {/* Join Our Rebellion Button */}
+          <div className="mt-3 sm:mt-4">
+            <button className="font-headline text-sm sm:text-base md:text-lg lg:text-xl font-bold text-paper bg-ink border-l-2 border-r-2 border-ink px-6 sm:px-8 py-2 sm:py-3 uppercase tracking-wider sm:tracking-widest transition-all duration-300 hover:bg-paper hover:text-ink hover:scale-105 w-full">
+              Join Our Rebellion
+            </button>
+          </div>
         </div>
         </div>
       </div>
