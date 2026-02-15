@@ -440,7 +440,7 @@ const HeadlineContent = ({ headline }: { headline: Headline }) => {
             className="inline-block bg-ink text-paper font-headline text-xs sm:text-sm md:text-base lg:text-lg font-bold uppercase px-4 sm:px-6 md:px-8 py-1.5 sm:py-2 md:py-2.5 border-2 border-ink hover:bg-paper hover:text-ink transition-colors duration-200"
             style={{ letterSpacing: '0.1em' }}
           >
-            View More
+            FULL STORY
           </a>
         </div>
 
@@ -519,7 +519,7 @@ const HeadlineContent = ({ headline }: { headline: Headline }) => {
             className="inline-block bg-ink text-paper font-headline text-xs sm:text-sm md:text-base lg:text-lg font-bold uppercase px-4 sm:px-6 py-2 sm:py-2.5 border-2 border-ink hover:bg-paper hover:text-ink transition-colors duration-200"
             style={{ letterSpacing: '0.1em' }}
           >
-            View More
+            FULL STORY
           </a>
         </div>
       )}
