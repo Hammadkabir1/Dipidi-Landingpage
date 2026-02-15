@@ -91,7 +91,7 @@ const headlines: Headline[] = [
     subtitle2: "PURPOSE",
     isCustomLayout: true,
     link: "#",
-    customText: "We weren't meant to live on black mirrors. They built machines to capture attention and our relationships paid the price. We're not the problem. The system is. We can keep feeding the machine or we can take our lives back. The choice is ours."
+    customText: "We weren't meant to live on black mirrors. They built machines to capture attention and our relationships paid the price. We can keep feeding the machine or we can take our lives back. The choice is ours."
   },
   {
     title: "The Wall Street Journal",
@@ -420,9 +420,11 @@ const HeadlineContent = ({ headline }: { headline: Headline }) => {
         </div>
 
         {/* Additional text line - same style as video caption */}
-        <p className="font-body text-sm sm:text-base md:text-lg lg:text-xl text-ink ink-bleed text-center mb-0.5 px-2 leading-snug">
-          {headline.customText || "We're not the problem. The system is."}
-        </p>
+        {headline.customText && (
+          <p className="font-body text-sm sm:text-base md:text-lg lg:text-xl text-ink ink-bleed text-center mb-0.5 px-2 leading-snug">
+            {headline.customText}
+          </p>
+        )}
 
         {/* Arrow pointing down */}
         <div className="text-center mb-0.5">
