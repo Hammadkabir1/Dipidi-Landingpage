@@ -123,14 +123,18 @@ const NewspaperFooter = () => {
             <hr className="border-t-2 border-ink mb-3 sm:mb-4" />
             <div className="text-center">
               <a
-                href="src\assets\PRIVACY POLICY Dipidi.docx"
+                href="/PRIVACY POLICY Dipidi.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="font-body text-base sm:text-lg md:text-xl lg:text-2xl text-ink hover:font-bold transition-all"
               >
                 Privacy Policy
               </a>
               <span className="font-body text-base sm:text-lg md:text-xl lg:text-2xl text-ink mx-2 sm:mx-3">|</span>
               <a
-                href="src\assets\TERMS OF SERVICE Dipidi.docx"
+                href="/TERMS OF SERVICE Dipidi.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="font-body text-base sm:text-lg md:text-xl lg:text-2xl text-ink hover:font-bold transition-all"
               >
                 Terms of Service
